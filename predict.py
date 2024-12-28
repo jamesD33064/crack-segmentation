@@ -1,21 +1,12 @@
 from PIL import Image
 from ultralytics import YOLO
+import os
 
-# 初始化 YOLO 模型
 # model = YOLO("v8x-seg.pt")
-model = YOLO("runs/segment/train4/weights/best.pt")  
+model = YOLO("runs/segment/train2/weights/best.pt")  
 
-# 測試影像檔案路徑
-# source = "datasets/crack-seg/test/images/1616.rf.c868709931a671796794fdbb95352c5a.jpg"
-# source = "DATA_Maguire_20180517_ALL/SDNET2018/D/CD/7001-42.jpg"
-source = [
-    "benchmark/test1.jpg",
-    "benchmark/test2.jpg",
-    "benchmark/test3.jpg",
-    "benchmark/test4.jpg",
-    "benchmark/test5.jpg",
-    "benchmark/test6.jpg",
-]
+dir = "benchmark"
+source = [os.path.join(dir, file) for file in os.listdir(dir) if file.lower().endswith((".jpg", ".png"))]
 
 results = model(source)
 
