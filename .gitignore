@@ -1,0 +1,10 @@
+DATA_Maguire_20180517_ALL/
+datasets/
+.DS_Store
+benchmark/
+predicts/
+runs/
+128-6深度學習應用於影像裂縫辨識：發展智慧維運系統以監控結構安全性.pdf
+影像辨識-1219.docx
+Maguire Data May 17 2018.zip
+v8x-seg.pt
